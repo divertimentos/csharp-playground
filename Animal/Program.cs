@@ -1,17 +1,21 @@
-﻿interface IAnimal {
-  string MakeSound();
+﻿interface IAnimal
+{
+    int Paws { get; set; }
+    string Name { get; set; }
+
+    string MakeSound();
 }
 
 public class Cat : IAnimal
 {
 
-    public int Paws;
-    public string Name;
+    public int Paws { get; set; }
+    public string Name { get; set; }
 
     public Cat(int paws, string name)
     {
-        Paws = paws;
         Name = name;
+        Paws = paws;
 
     }
 
@@ -25,9 +29,9 @@ public class Program
 {
     static void Main()
     {
-        var dante = new Cat(paws: 4, name: "Dante");
-        Console.WriteLine($"The cat is called {dante.Name}.");
-        Console.WriteLine($"The cat has {dante.Paws} paws.");
-
+        var fofinho = new Cat(paws: 4, name: "Fofinho");
+        Console.WriteLine($"The cat is called {fofinho.Name}.");
+        Console.WriteLine($"The cat has {fofinho.Paws} paws.");
+        Console.WriteLine($"This is {fofinho.Name}'s sound: {fofinho.MakeSound()}");
     }
 }
